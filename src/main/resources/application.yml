@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: desafio-dev-api-rest
+  profiles:
+    active: dev
+  datasource:
+    url: "jdbc:postgresql://127.0.0.1:5432/dock"
+    username: postgres
+    password: G~w<Yq=&fU;93kNLZ
+
+server:
+  port: 8081
+  servlet:
+    contextPath: /desafio-dev-api-rest
+
+info:
+  app:
+    name: Desafio Dev API Rest
+    description: Desafio API Rest da Dock
+    version: 0.1.1-SNAPSHOT
