@@ -1,0 +1,407 @@
+{
+  "info": {
+    "_postman_id": "556dc37b-dd49-4b6a-86bf-37de22911bbf",
+    "name": "Dock - Desafio API Rest",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "3332525"
+  },
+  "item": [
+    {
+      "name": "Home",
+      "item": [
+        {
+          "name": "/",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081"
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Account",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"agencyNumber\": 1,\n    \"accountHolderDocumentNumber\": \"431.216.968-31\",\n    \"number\": \"000000001-1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/account",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Account Balance",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "number",
+                "value": "000000001-1",
+                "type": "text"
+              },
+              {
+                "key": "documentNumber",
+                "value": "431.216.968-31",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/account/000000001-1/balance",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account",
+                "000000001-1",
+                "balance"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Activate Account",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "number",
+                "value": "000000001-1",
+                "type": "text"
+              },
+              {
+                "key": "documentNumber",
+                "value": "431.216.968-31",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/account/000000001-1/activate",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account",
+                "000000001-1",
+                "activate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Inactivate Account",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "number",
+                "value": "000000001-1",
+                "type": "text"
+              },
+              {
+                "key": "documentNumber",
+                "value": "431.216.968-31",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/account/000000001-1/inactivate",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account",
+                "000000001-1",
+                "inactivate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unblocked Account",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/account/000000001-1/unblocked",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account",
+                "000000001-1",
+                "unblocked"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Blocked Account",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/account/000000001-1/blocked",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account",
+                "000000001-1",
+                "blocked"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deposit Transaction",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"DEPOSIT\",\n    \"value\": 5000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/account/000000001-1/transaction",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account",
+                "000000001-1",
+                "transaction"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Extract By Period",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "startDate",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "endDate",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"startDate\": \"2025-02-05T00:00:00-03:00\",\n    \"endDate\": \"2025-02-05T23:59:00-03:00\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/account/000000001-1/extract",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account",
+                "000000001-1",
+                "extract"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Output Transaction",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"OUTPUT\",\n    \"value\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/account/000000001-1/transaction",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account",
+                "000000001-1",
+                "transaction"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Account Holder",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Vinicius Sabino da Rocha\",\n    \"documentNumber\": \"431.216.968-31\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/account-holder",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account-holder"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete by Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/account-holder/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account-holder",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get by Document",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/account-holder/431.216.968-31",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account-holder",
+                "431.216.968-31"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete by DocumentNumber",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/account-holder/delete?documentNumber=431.216.968-31",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "account-holder",
+                "delete"
+              ],
+              "query": [
+                {
+                  "key": "documentNumber",
+                  "value": "431.216.968-31"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
