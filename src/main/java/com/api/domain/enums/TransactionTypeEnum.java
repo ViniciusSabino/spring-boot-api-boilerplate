@@ -1,6 +1,6 @@
 package com.api.domain.enums;
 
-public enum ReleaseTypeEnum {
+public enum TransactionTypeEnum {
     DEPOSIT,
     OUTPUT
 }

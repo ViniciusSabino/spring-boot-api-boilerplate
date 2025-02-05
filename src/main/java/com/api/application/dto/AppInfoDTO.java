@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class AppInfoDTO {
-
     @Value("${info.app.name}")
     private String name;
 

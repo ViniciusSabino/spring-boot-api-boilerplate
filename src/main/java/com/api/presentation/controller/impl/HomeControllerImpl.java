@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/")
 @RestController
-@RequiredArgsConstructor // TODO: Relembrar o que faz
-public class HomeControllerImp implements HomeController {
+@RequiredArgsConstructor
+public class HomeControllerImpl implements HomeController {
     private final AppInfoDTO info;
 
-    @GetMapping("/")
+    @GetMapping
+    @Override
     public ResponseEntity<AppInfoDTO> home() {
         return ResponseEntity.ok(info);
     }

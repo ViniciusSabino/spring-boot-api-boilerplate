@@ -8,14 +8,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-@Data
 @Entity
-@Table(name="agency")
-public class AgencyEntity {
+@Data
+@Table(name="transaction_type")
+public class TransactionTypeEntity {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="number", nullable=false, unique=true)
-    private Integer number;
+    @Column(name="type", nullable=false, unique = true)
+    private String type;
 }
