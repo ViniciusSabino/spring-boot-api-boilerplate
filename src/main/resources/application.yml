@@ -37,7 +37,7 @@ springdoc:
 server:
   port: 8081
   servlet:
-    contextPath: /desafio-dev-api-rest
+    contextPath: /
 
 info:
   app:

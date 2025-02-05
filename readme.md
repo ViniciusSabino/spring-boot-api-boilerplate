@@ -1,50 +1,81 @@
-# Cenário
+# Desafio Dev API Rest
 
 A Dock está crescendo e expandindo seus negócios, gerando novas oportunidades de revolucionar o mercado financeiro e criar produtos diferenciados.
 Nossa próxima missão é construir uma nova conta digital Dock para nossos clientes utilizarem através de endpoints, onde receberemos requisições em um novo backend que deverá gerenciar as contas e seus portadores (os donos das contas digitais).
 
-# Requisitos
+## 🛠 Tecnologias
+- **Java 21**
+- **Spring Boot**
+- **Gradle 8.12.1**
 
-- Deve ser possível criar e remover **portadores**
-    - Um **portador** deve conter apenas seu *nome completo* e *CPF*
-    - O *CPF* deve ser válido e único no cadastro de **portadores**
-- As **contas digital Dock** devem conter as seguintes funcionalidades:
-    - A conta deve ser criada utilizando o *CPF* do **portador**
-    - Uma conta deve ter seu *saldo*, *número* e *agência* disponíveis para consulta
-    - Necessário ter funcionalidade para fazer a *consulta de extrato* da conta *por período*
-    - Um **portador** pode fechar a **conta digital Dock** a qualquer instante
-    - Executar as operações de *saque* e *depósito*
-        - *Depósito* é liberado para todas as *contas ativas* e *desbloqueadas*
-        - *Saque* é permitido para todas as *contas ativas* e *desbloqueadas* desde que haja *saldo disponível* e não ultrapasse o limite diário de *2 mil reais*
+## 📋 Requisitos
+Antes de rodar a aplicação, certifique-se de que seu ambiente contém:
 
-## Regulação obrigatória
+### 🔹 Pré-requisitos
+- **Java 21** instalado e configurado no `PATH`.
+- **Gradle 8.12.1** (opcional, pois o projeto usa o Wrapper do Gradle).
+- **Git** instalado para clonar o repositório (opcional).
 
-- Precisamos *bloquear* e *desbloquear* a **conta digital Dock** a qualquer momento
-- A **conta digital Dock** nunca poderá ter o *saldo negativo*
+### 🔹 Dependências Internas
+A aplicação utiliza as seguintes tecnologias e dependências gerenciadas pelo Gradle:
+- **Spring Boot** (para criação do backend REST).
+- **Banco de Dados H2** (banco de dados em memória).
+- **Spring Data JPA** (para persistência de dados).
+- **Spring Web** (para expor os endpoints REST).
+- **Spring Doc OpenAPI** (para documentação Swagger).
 
+## 🚀 Instalação e Execução
+### 🔹 Executando com IntelliJ IDEA
+Se estiver usando o **IntelliJ IDEA**, basta importar o projeto como um projeto **Gradle** e executar a classe principal da aplicação.
 
-#  Orientações
+### 🔹 Executando pela Linha de Comando
+Caso não utilize o IntelliJ, é possível rodar a aplicação diretamente pelo terminal:
 
-Utilize qualquer uma das linguagens de programação:
-- Java
-- Javascript
-- Typescript
-- Python
-- Kotlin
-- Golang
+1. **Clone o repositório:**
+   ```sh
+   git clone <URL_DO_REPOSITORIO>
+   cd <NOME_DO_PROJETO>
+   ```
+2. **Compile e construa o projeto usando Gradle:**
+   ```sh
+   ./gradlew build
+   ```
+3. **Execute a aplicação:**
+   ```sh
+   ./gradlew bootRun
+   ```
 
-Desenvolva o case seguindo as melhores práticas que julgar necessário, aplique todos os conceitos, se atente a qualidade, utilize toda e qualquer forma de governança de código válido. Vamos considerar toda e qualquer implementação, trecho de código, documentação e/ou intenção compartilhada conosco. Esperamos também que o desafio seja feito dentro do tempo disponibilizado e que esteja condizente com a posição pretendida.
+A aplicação estará disponível em `http://localhost:8081`
 
-É necessário ter o desafio 100% funcional contendo informações e detalhes sobre: como iniciar a aplicação, interagir com as funcionalidades disponíveis e qualquer outro ponto adicional.
+## 📌 Uso
+- **Swagger Open UI:** [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
+- **Swagger API Docs:** [http://localhost:8081/api-docs](http://localhost:8081/api-docs)
+- **H2 Database Console:** [http://localhost:8081/h2-console](http://localhost:8081/h2-console)
 
-## Diferenciais
+## 📂 Estrutura do Projeto
+A estrutura do projeto segue uma abordagem bem definida, separando camadas de **aplicação, domínio, infraestrutura e apresentação**:
 
-- Práticas, padrões e conceitos de microservices será considerado um diferencial para nós por existir uma variedade de produtos e serviços dentro da Dock.
-- Temos 100% das nossas aplicações e infraestrutura na nuvem, consideramos um diferencial, caso o desafio seja projeto para ser executado na nuvem.
-- Nossos times são autônomos e têm liberdade para definir arquiteturas e soluções. Por este motivo será considerado diferencial toda: arquitetura, design, paradigma e documentação detalhando a sua abordagem.
+```plaintext
+application    # Lógica da aplicação
+  ├── dto         # Objeto de transferência de dados
+  ├── service     # Serviços de aplicação 
+  └── utils       # Utilitários gerais
 
-### Instruções
-      1. Faça o fork do desafio;
-      2. Crie um repositório privado no seu github para o projeto e adicione como colaborador, os usuários informados no email pelo time de recrutameto ;
-      3. Após concluir seu trabalho faça um push; 
-      4. Envie um e-mail à pessoa que está mantendo o contato com você durante o processo notificando a finalização do desafio para validação.
+domain        # Camada de domínio (regras de negócio puras)
+  ├── model       # Entidades do domínio
+  ├── enums       # Enumerações do domínio
+  ├── exception   # Exceções customizadas
+  └── utils       # Utilitários do domínio
+
+infrastructure # Infraestrutura e integrações externas
+  ├── repository  # Repositórios de dados
+  ├── utils       # Utilitários para integrações externas
+  └── config      # Configurações gerais da aplicação
+
+presentation  # Interface com o usuário
+  ├── controller  # Controladores REST
+  └── exception   # Tratamento de erros (ResponseExceptionHandler)
+```
+
+## 🤝 Contribuição
+Se desejar contribuir, sinta-se à vontade para abrir um **Pull Request** com melhorias, correções de bugs ou novas funcionalidades.
