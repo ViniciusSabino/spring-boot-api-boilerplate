@@ -1,7 +1,6 @@
-# Desafio Dev API Rest
+# Spring Boot Rest API Boilerplate 
 
-A Dock está crescendo e expandindo seus negócios, gerando novas oportunidades de revolucionar o mercado financeiro e criar produtos diferenciados.
-Nossa próxima missão é construir uma nova conta digital Dock para nossos clientes utilizarem através de endpoints, onde receberemos requisições em um novo backend que deverá gerenciar as contas e seus portadores (os donos das contas digitais).
+Micro serviço que tem como objetivo ser um guia para a criação de APIs Rest com Spring Boot e Gradle, a ideia é que esse projeto seja atualizado constantemente conforme a tecnologia vai avançando e novas práticas vão surgindo   
 
 ## 🛠 Tecnologias
 - **Java 21**
